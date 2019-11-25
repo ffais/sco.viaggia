@@ -3,7 +3,7 @@ declare -i i=0
 declare -a inst_lower
 declare -a inst_upper
 mkdir upload
-if [ ! -z "$1" ]; then
+if [ -z "$1" ]; then
   echo "blob url missing"
 else
   root_dir=$(pwd)
