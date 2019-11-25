@@ -9,7 +9,7 @@ stages:
 
 deploy_frontend:
   stage: deploy
-  image: smartcommunitylab/cordova-hcp:slimn
+  image: smartcommunitylab/cordova-hcp:slim
   environment:
     name: develop
   script:
