@@ -20,7 +20,7 @@ else
   for inst in "${inst_lower[@]}"; do
     sed -i -e "s@\(\"content_url\": \"https://hotcode.z6.web.core.windows.net/\).*\"@\1$inst\"@g" cordova-hcp.json
     cp -r config/instances/${inst_upper[$i]}/www www
-    /tmp/viaggia-mobile/node_modules/.bin/cordova-hcp build
+    /tmp/node_modules/.bin/cordova-hcp build
     cp -r www ../upload/$inst
     i+=1
   done
