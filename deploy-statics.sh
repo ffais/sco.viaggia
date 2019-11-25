@@ -24,4 +24,4 @@ for inst in "${inst_lower[@]}"; do
   i+=1
 done
 BLOB="$BLOB_URL\$web$TOKEN"
-azcopy sync '../upload/' $BLOB --recursive
+azcopy sync '../upload/' $BLOB --recursive --delete-destination=true
