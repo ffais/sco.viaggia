@@ -25,5 +25,5 @@ else
     i+=1
   done
   blob_url="$1"
-  azcopy sync upload/ "${blob_url}" --recursive
+  azcopy sync ${root_dir}/upload/ "${blob_url}" --recursive
 fi
