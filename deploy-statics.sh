@@ -17,6 +17,7 @@ cd ${root_dir}/viaggia-mobile || exit
 i=0
 for inst in "${inst_lower[@]}"; do
   sed -i -e "s@\(\"content_url\": \"https://hotcode.z6.web.core.windows.net/\).*\"@\1$inst\"@g" cordova-hcp.json
+  sed -i -e "s@\(\"android_identifier\": \"eu.trentorise.smartcampus.viaggia).*\"@\1$inst\"@g" cordova-hcp.json
   cp -r config/instances/${inst_upper[$i]}/www/* www/
   /cordova-hpc/node_modules/.bin/cordova-hcp build
   cp -r www/ ../upload/$inst
