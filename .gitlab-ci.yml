@@ -13,6 +13,6 @@ deploy_frontend:
   environment:
     name: develop
   script:
-    - bash deploy-statics.sh $BLOB_URL
+    - bash deploy-statics.sh "$BLOB_URL"
   only:
     - test
