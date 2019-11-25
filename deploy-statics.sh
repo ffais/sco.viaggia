@@ -19,11 +19,11 @@ else
   i=0
   for inst in "${inst_lower[@]}"; do
     sed -i -e "s@\(\"content_url\": \"https://hotcode.z6.web.core.windows.net/\).*\"@\1$inst\"@g" cordova-hcp.json
-    cp -r config/instances/${inst_upper[$i]}/www www
+    cp -r config/instances/${inst_upper[$i]}/www/ www
     /cordova-hpc/node_modules/.bin/cordova-hcp build
-    cp -r www ../upload/$inst
+    cp -r www/ ../upload/$inst
     i+=1
   done
-  blob_url="$1"
-  azcopy sync ${root_dir}/upload/ "${blob_url}" --recursive
+  # blob_url="$1"
+  azcopy sync ${root_dir}/upload/ "$BLOB_URL" --recursive
 fi
