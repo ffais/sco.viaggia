@@ -3,7 +3,7 @@ declare -i i=0
 declare -a inst_lower
 declare -a inst_upper
 mkdir upload
-if [ -z "$1" ]; then
+if [ ! -z "$1" ]; then
   echo "blob url missing"
 else
   root_dir=$(pwd)
@@ -15,6 +15,7 @@ else
       i+=1
     fi
   done
+  echo "${root_dir}"
   cd ${root_dir}/viaggia-mobile || exit
   i=0
   for inst in "${inst_lower[@]}"; do
@@ -25,5 +26,5 @@ else
     i+=1
   done
   # blob_url="$1"
-  azcopy sync ${root_dir}/upload/ $BLOB_URL --recursive
+  azcopy sync "${root_dir}/upload/" "$BLOB_URL" --recursive
 fi
