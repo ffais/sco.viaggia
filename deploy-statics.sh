@@ -26,6 +26,6 @@ else
     i+=1
   done
   # blob_url="$1"
-  echo "$BLOB_URL"
-  azcopy sync '../upload/' "$BLOB_URL" --recursive
+  BLOB="$BLOB_URL\$web$TOKEN"
+  azcopy sync '../upload/' $BLOB --recursive
 fi
