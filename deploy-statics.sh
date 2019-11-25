@@ -27,5 +27,5 @@ else
   done
   # blob_url="$1"
   echo "$BLOB_URL"
-  azcopy sync "../upload/" "$BLOB_URL" --recursive
+  azcopy sync '../upload/' "$BLOB_URL" --recursive
 fi
